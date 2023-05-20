@@ -4,94 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Text2Voice </title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
     />
-    <style>
-      * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-      }
-      body {
-        background: linear-gradient(to bottom, #110153, #34014a);
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        row-gap: 1em;
-      }
-      body > h1 {
-        margin-top: 0.3em;
-        color: white;
-        font-size: 3.5em;
-      }
-      body hr {
-        width: 90%;
-      }
-      .language,
-      .voiceStyle {
-        line-height: 40px;
-      }
-      .language > h3,
-      .voiceStyle > h3 {
-        color: white;
-        font-size: 1.8em;
-        border-bottom: 2px solid white;
-      }
-      .language > button,
-      .voiceStyle > button {
-        padding: 5px;
-        font-size: 1.2em;
-        font-weight: bold;
-        border: none;
-        background-color: rgb(0, 0, 0, 0.41);
-        border-radius: 5px;
-        color: white;
-        cursor: pointer;
-      }
-      textarea {
-        background-color: rgba(0, 0, 0, 0.415);
-        color: white;
-        width: 80%;
-        padding: 10px;
-        font-size: 1.7em;
-      }
-      body > button {
-        background-color: transparent;
-        border: none;
-        color: white;
-        font-size: 1.3em;
-        cursor: pointer;
-        transition: 0.3s;
-      }
-      body > button:hover {
-        color: rgb(5, 205, 255);
-      }
-      .active {
-        background-color: rgb(3, 114, 85) !important;
-        color: rgb(255, 255, 255) !important;
-      }
-      .active2 {
-        background-color: rgb(3, 114, 85) !important;
-        color: rgb(255, 255, 255) !important;
-      }
-      @media (max-width: 500px) {
-        body > h1 {
-          font-size: 3em;
-        }
-      }
-      @media (max-width: 400px) {
-        body > h1 {
-          font-size: 2۔5em;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
   </head>
   <body>
-    <h1>Text To Speak</h1>
+    <h1>Text To <i class="bi bi-megaphone"></i></h1>
     <hr />
     <div class="language">
       <h3>Language</h3>
@@ -100,37 +22,12 @@
     </div>
     <div class="voiceStyle">
       <h3>Voice Style</h3>
-      <button class="active2 change2">Male</button>
-      <button class="change2">Female</button>
+      <button class="active2 change2">Male <i class="bi bi-gender-male"></i></button>
+      <button class="change2">Female <i class="bi bi-gender-female"></i></button>
     </div>
     <textarea name="" id="" cols="25" rows="6"></textarea>
     <button id="speak">Speak <i class="bi bi-megaphone-fill"></i></button>
-
-    <script>
-      let inputText = document.querySelector("textarea");
-      let btn = document.querySelector("#speak");
-
-      btn.addEventListener("click", () => {
-        let utterance = new SpeechSynthesisUtterance(inputText.value);
-        speechSynthesis.speak(utterance);
-      });
-
-      let seletedlan = "English";
-      toolBtn = document.querySelectorAll(".change");
-      toolBtn.forEach((btn) => {
-        btn.addEventListener("click", () => {
-          document.querySelector(".active").classList.remove("active");
-          btn.classList.add("active");
-        });
-      });
-      let seletedVoiceStyle = "Male";
-      toolBtn2 = document.querySelectorAll(".change2");
-      toolBtn2.forEach((btn) => {
-        btn.addEventListener("click", () => {
-          document.querySelector(".active2").classList.remove("active2");
-          btn.classList.add("active2");
-        });
-      });
-    </script>
+    
+    <script src="./script.js"></script>
   </body>
 </html>
