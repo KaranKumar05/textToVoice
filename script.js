@@ -14,11 +14,3 @@ toolBtn.forEach((btn) => {
     btn.classList.add("active");
   });
 });
-let seletedVoiceStyle = "Male";
-toolBtn2 = document.querySelectorAll(".change2");
-toolBtn2.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    document.querySelector(".active2").classList.remove("active2");
-    btn.classList.add("active2");
-  });
-});
